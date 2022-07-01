@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #dddddd;
+}
+ul{
+    list-style: none;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+/* header */
+.headerHolder{
+    display: flex;
+}
+
+.headerHolder .logo{
+    text-align: center;
+    flex-grow: 1;
+    font-size: 24px;
+}
+
+.headerHolder #navLinks{
+    flex-grow: 2;
+}
+.headerHolder .icons{
+    flex-grow: 1;
+}
+#navLinks .links{
+    margin-bottom: 0 !important;
+    padding-left: 0 !important;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    color: #555;
+    text-decoration: none;
+    transition: all .3s;
+}
+.links li a{
+    font-size: 20px;
+}
+li a:hover{
+    color: orange;
+}
+.iconItem{
+    background-color: #dddddd;
+    transition: all .3s;
+}
+.iconItem:hover{
+    color: white;
+    background-color: orange;
+}
+
+.icons{
+    display: flex;        
+}
+.icons .colapse{
+    display: none;
+    position: relative;
+}
+.icons i #navLinksAlt{
+    display: none;
+    position: absolute;
+    bottom: -265px;
+    left: -80px;
+    width: 220px;
+    padding: 10px 0 10px 30px;
+    font-size: medium;
+    border-radius: 5px;
+    background-color: white;
+    z-index: 3;
+    animation-name: moveAnimation;
+    animation-duration:.5s;
+}
+@keyframes moveAnimation {
+    from {left: 100px;}
+    to {left: -80px;}
+}
+.icons i #navLinksAlt ul{
+    background-color: white;
+    color: #555;
+    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media screen and (max-width:900px){
+    #navLinks{
+        display: none ;
+    }
+    .icons .colapse{
+        display: block;
+    }
+    .headerHolder .icons{
+        justify-content: right;
+    }
+    .headerHolder .logo{
+        text-align: left;
+    }
+    .backgroundInfo{
+        width: 100%;
+    }
+}
+
+/* background */
+.backgroundSite{
+    position: relative;
+    background-image: url(image/banner-bg.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:top left;
+    background-attachment: fixed;
+    height: 70vh;
+    width: 100%;
+}
+
+.backgroundInfo{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+    z-index: 2;
+}
+.backgroundInfo p{
+    margin-top: 10px;
+}
+.backgroundSite::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, .45);
+    box-shadow: 100px 100px 100px inset;
+}
+
+
+/* feature section */
+
+.cardFeature{
+    width: 32%;
+    margin: 0 4px;
+    outline-offset: -10px;
+    outline: 1px solid #aaa;
+    transition: all .3s;
+}
+.cardFeature:hover{
+    outline-offset:0;
+    outline-color: black;
+    outline-width: 2px;
+}
+
+@media screen  and (max-width:900px){
+    .cardFeature{
+        width: 45%;
+        margin: 5px 4px 0 4px;
+    }  
+}
+
+@media screen  and (max-width:700px){
+    .cardFeature{
+        width: 100%;
+        margin: 10px 0;
+    }  
+}
+
+/* products section*/
+.cardProduct{
+    outline-offset: -10px;
+    outline: 1px solid #aaa;
+}
+.cardProduct:hover{
+    outline-offset:0;
+    outline-color: black;
+    outline-width: 2px;
+}
+
+/* contact us */
+.socialIcon a{
+    background-color: #555;
+    color: white;
+}
+.socialIcon a:hover{
+    background-color: orange;
+}
+.linksFooter{
+    display: block;
+    margin: 15px 0;
+}
+.linksFooter i{
+    margin-right: 5px;
+    transition: all .3s;
+}
+.linksFooter:hover i{
+    margin-right: 10px;
+}
+.footerHolder{
+    width:70%; 
+    margin: auto;
+}
+@media screen  and (max-width:900px){
+    .footerHolder{
+        width: 90%;
+    }  
+}
+.clipPath{clip-path: polygon(100% 0, 93% 50%, 100% 99%, 0% 100%, 7% 50%, 0% 0%)};
